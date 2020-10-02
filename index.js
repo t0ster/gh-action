@@ -6,11 +6,17 @@ try {
   const nameToGreet = core.getInput("who-to-greet");
   console.log(`Hello ${nameToGreet}!`);
   const time = new Date().toTimeString();
-  core.setOutput("time", time);
+  // core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
   // const payload = JSON.stringify(github.context.payload, undefined, 2);
-  const payload = JSON.stringify(process.env, undefined, 2);
-  console.log(`The event payload: ${payload}`);
+  // const payload = JSON.stringify(process.env, undefined, 2);
+  // console.log(`The event payload: ${payload}`);
+  const branch = process.env.GITHUB_REF.replace("refs/heads/", "");
+  const shortSha = process.env.GITHUB_SHA.slice(0, 8);
+  console.log(branch);
+  console.log(shortSha);
+  core.setOutput("branch", branch);
+  core.setOutput("short-sha", shortSha);
 } catch (error) {
   core.setFailed(error.message);
 }

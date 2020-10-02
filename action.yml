@@ -6,8 +6,10 @@ inputs:
     required: true
     default: "World"
 outputs:
-  time: # id of output
-    description: "The time we greeted you"
+  branch:
+    description: "Branch name"
+  short-sha:
+    description: "Short SHA"
 runs:
   using: "node12"
   main: "index.js"
