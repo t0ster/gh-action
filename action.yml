@@ -8,7 +8,7 @@ inputs:
 outputs:
   branch:
     description: "Branch name"
-  short-sha:
+  shortsha:
     description: "Short SHA"
 runs:
   using: "node12"

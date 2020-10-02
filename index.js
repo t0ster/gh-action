@@ -16,7 +16,7 @@ try {
   console.log(branch);
   console.log(shortSha);
   core.setOutput("branch", branch);
-  core.setOutput("short-sha", shortSha);
+  core.setOutput("shortsha", shortSha);
 } catch (error) {
   core.setFailed(error.message);
 }
