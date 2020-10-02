@@ -6,6 +6,8 @@ inputs:
     required: true
     default: "World"
 outputs:
+  time:
+    description: "Time"
   branch:
     description: "Branch name"
   shortsha:
